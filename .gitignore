@@ -1,0 +1,28 @@
+
+# Python缓存
+__pycache__/
+*.py[cod]
+
+# Python虚拟环境
+.venv/
+venv/
+
+# IDE配置
+.idea/
+.vscode/
+
+# 原始数据集（不提交）
+data/
+
+# 模型权重（不提交）
+checkpoints/**/*.pth
+checkpoints/**/*.pt
+checkpoints/**/*.ckpt
+
+# TensorBoard事件文件（不提交）
+logs/**/events.out.tfevents.*
+
+# 临时预测文件
+results/predictions/**/*.npz
+results/uncertainty_maps/**/*.npz
+results/error_maps/**/*.npz

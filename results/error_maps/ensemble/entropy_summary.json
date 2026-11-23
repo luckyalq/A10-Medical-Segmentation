@@ -1,0 +1,14 @@
+{
+  "method": "ensemble",
+  "metric": "entropy",
+  "macro_error_auroc": 0.9657417480440414,
+  "macro_error_auprc": 0.41291787449692924,
+  "macro_fn_top20_coverage": 0.8940174918818775,
+  "uncertainty_quintile_error_rates": [
+    0.002366325182309027,
+    0.0031345716151265604,
+    0.008067079982627517,
+    0.025479618536777077,
+    0.14079451315694946
+  ]
+}

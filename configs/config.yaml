@@ -1,0 +1,57 @@
+project:
+  name: A10_Medical_Uncertainty
+  seed: 42
+
+data:
+  root: ../data
+  # 项目位于 /home/featurize/work/A10_Medical_Uncertainty 时，默认读取同级 data。
+  # 若服务器把数据挂载在别处，可设置环境变量 A10_DATA_ROOT，无需改代码。
+  image_subdir: ISIC2018_Task1-2_Training_Input
+  mask_subdir: ISIC2018_Task1_Training_GroundTruth
+  image_size: 256
+  train_ratio: 0.70
+  val_ratio: 0.15
+  test_ratio: 0.15
+  normalize: imagenet
+  num_workers: 4
+
+model:
+  # classic_unet 用作消融；vgg16_unet 是正式实验默认模型。
+  architecture: vgg16_unet
+  encoder_weights: imagenet
+  in_channels: 3
+  out_channels: 1
+  base_channels: 32
+  dropout: 0.30
+  freeze_encoder_epochs: 5
+
+training:
+  batch_size: 8
+  epochs: 100
+  learning_rate: 0.0001
+  weight_decay: 0.0001
+  patience: 15
+  threshold: 0.50
+  amp: true
+  gradient_clip: 1.0
+  scheduler_factor: 0.5
+  scheduler_patience: 5
+  min_learning_rate: 0.000001
+
+ensemble:
+  seeds: [42, 123, 2024, 7, 99]
+
+mc_dropout:
+  passes: 20
+
+uncertainty:
+  high_quantile: 0.90
+  review_rates: [0.05, 0.10, 0.20, 0.30]
+  ece_bins: 15
+
+paths:
+  splits: splits
+  checkpoints: checkpoints
+  results: results
+  logs: logs
+

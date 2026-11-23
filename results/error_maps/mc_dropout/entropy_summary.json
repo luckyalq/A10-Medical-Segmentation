@@ -1,0 +1,14 @@
+{
+  "method": "mc_dropout",
+  "metric": "entropy",
+  "macro_error_auroc": 0.957912281552161,
+  "macro_error_auprc": 0.4102243134063867,
+  "macro_fn_top20_coverage": 0.8898314222738808,
+  "uncertainty_quintile_error_rates": [
+    0.0038696172687527016,
+    0.005346541740332859,
+    0.01176537642331113,
+    0.031000201342050566,
+    0.15351439801424627
+  ]
+}
