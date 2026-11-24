@@ -75,4 +75,5 @@ python scripts/11_ablation.py
 - MC-Dropout 推理仅启用 Dropout，BatchNorm 保持评估状态。
 - Abstain 阈值只从验证集确定，不能使用测试集标签选阈值。
 - 报告指标时同时保留 Micro 汇总与逐图像 Macro 统计。
+本项目已完成 Baseline、Deep Ensemble 和 MC-Dropout 三种方法的模型训练及后续不确定性分析。
 
